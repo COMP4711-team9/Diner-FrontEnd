@@ -20,4 +20,5 @@ class Menu extends MY_Model {
         $this->rest->option(CURLOPT_PORT, REST_PORT);
         return $this->rest->get('/maintenance');
     }
+
 }
