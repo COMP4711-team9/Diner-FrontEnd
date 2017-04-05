@@ -1,1 +1,2 @@
-# Diner-FrontEnd
+# starter-standalone
+Starter for lab 8
