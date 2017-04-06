@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7de4bdc1-1346-4bc1-8a91-e5b85431aa90" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Crud.php" afterPath="$PROJECT_DIR$/application/controllers/Crud.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Shopping.php" afterPath="$PROJECT_DIR$/application/controllers/Shopping.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Menu.php" afterPath="$PROJECT_DIR$/application/models/Menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/menuitem-shop.php" afterPath="$PROJECT_DIR$/application/views/menuitem-shop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/navbar.php" afterPath="$PROJECT_DIR$/application/views/navbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/template-shopping.php" afterPath="$PROJECT_DIR$/application/views/template-shopping.php" />
-    </list>
+    <list default="true" id="7de4bdc1-1346-4bc1-8a91-e5b85431aa90" name="Default" comment="" />
     <ignored path="Diner-FrontEnd.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -246,12 +237,12 @@
       <option name="presentableId" value="Default" />
       <updated>1491413838306</updated>
       <workItem from="1491413839564" duration="941000" />
-      <workItem from="1491492538457" duration="2013000" />
+      <workItem from="1491492538457" duration="2086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2954000" />
+    <option name="totallyTimeSpent" value="3027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
