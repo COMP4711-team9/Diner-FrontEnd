@@ -1,9 +1,12 @@
 <?php
 
+/**
+ * Modified to use REST client to get port data from our server.
+ */
 define('REST_SERVER', 'http://backend.local');  // the REST server host
 define('REST_PORT', $_SERVER['SERVER_PORT']);               // the port you are running the server on
 
-class Menu extends MY_Model {
+class Menu extends CI_Model {
 
 	// constructor
 	function __construct()
@@ -73,5 +76,4 @@ class Menu extends MY_Model {
         $this->rest->option(CURLOPT_PORT, REST_PORT);
         $retrieved = $this->rest->post('/maintenance/item/id/' . $record['code'], $record);
     }
-
 }
