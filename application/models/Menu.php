@@ -4,17 +4,32 @@
  * Modified to use REST client to get port data from our server.
  */
 define('REST_SERVER', 'http://backend.local');  // the REST server host
-define('REST_PORT', $_SERVER['SERVER_PORT']);               // the port you are running the server on
+define('REST_PORT', $_SERVER['SERVER_PORT']);   // the port you are running the server on
 
-class Menu extends CI_Model {
+class Menu extends MY_Model {
+    /**
+     * Modified to use REST client to get port data from our server.
+     */
+    // constructor
+    function __construct()
+    {
+        parent::__construct();
 
-	// constructor
-	function __construct()
-	{
-		parent::__construct();
         //*** Explicitly load the REST libraries.
         $this->load->library(['curl', 'format', 'rest']);
-	}
+    }
+
+    function rules() {
+        $config = [
+            ['field'=>'id', 'label'=>'Menu code', 'rules'=> 'required|integer'],
+            ['field'=>'name', 'label'=>'Item name', 'rules'=> 'required'],
+            ['field'=>'description', 'label'=>'Item description', 'rules'=> 'required|max_length[256]'],
+            ['field'=>'price', 'label'=>'Item price', 'rules'=> 'required|decimal'],
+            ['field'=>'picture', 'label'=>'Item picture', 'rules'=> 'required'],
+            ['field'=>'category', 'label'=>'Menu category', 'rules'=> 'required']
+        ];
+        return $config;
+    }
 
     // Return all records as an array of objects
     function all()
@@ -33,8 +48,8 @@ class Menu extends CI_Model {
     }
 
     // Create a new data object.
-// Only use this method if intending to create an empty record and then
-// populate it.
+    // Only use this method if intending to create an empty record and then
+    // populate it.
     function create()
     {
         $names = ['id','name','description','price','picture','category'];
@@ -58,7 +73,10 @@ class Menu extends CI_Model {
         $this->rest->initialize(array('server' => REST_SERVER));
         $this->rest->option(CURLOPT_PORT, REST_PORT);
         $result = $this->rest->get('/maintenance/item/id/' . $key);
-        return ! empty($result);
+        if (isset($result->error))
+            return false;
+        else
+            return true;
     }
 
     // Update a record in the DB
@@ -66,7 +84,7 @@ class Menu extends CI_Model {
     {
         $this->rest->initialize(array('server' => REST_SERVER));
         $this->rest->option(CURLOPT_PORT, REST_PORT);
-        $retrieved = $this->rest->put('/maintenance/item/id/' . $record['code'], $record);
+        $retrieved = $this->rest->put('/maintenance/item/id/' . $record->id, $record);
     }
 
     // Add a record to the DB
@@ -74,6 +92,6 @@ class Menu extends CI_Model {
     {
         $this->rest->initialize(array('server' => REST_SERVER));
         $this->rest->option(CURLOPT_PORT, REST_PORT);
-        $retrieved = $this->rest->post('/maintenance/item/id/' . $record['code'], $record);
+        $retrieved = $this->rest->post('/maintenance/item/id/' . $record->id, $record);
     }
 }
